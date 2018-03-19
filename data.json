@@ -1,0 +1,82 @@
+{
+    "murder time": 7,
+    "discover time": 10,
+    "people": {
+        "aaron":"red",
+        "bobby":"blue",
+        "charlotte":"green",
+        "david":"orange"
+    },
+    "victim": "aaron",
+    "murderer": "bobby",
+    "rooms": {
+        "garden":{
+            "min": 1,
+            "max": 4,
+            "coords":[600,200]
+        },
+        "event":{
+            "min": 1,
+            "max": 4,
+            "coords":[600,130]
+        },
+        "rooftop":{
+            "min": 1,
+            "max": 4,
+            "coords":[530,150]
+        },
+        "hallway":{
+            "min": 1,
+            "max": 4,
+            "coords":[420,275]
+        },
+        "vip":{
+            "min": 1,
+            "max": 4,
+            "coords":[400,200]
+        },
+        "maze":{
+            "min": 1,
+            "max": 4,
+            "coords":[600,380]
+        }
+    },
+    "connections": {
+        "garden": ["event","maze"],
+        "event": ["garden","rooftop"],
+        "rooftop": ["event","hallway"],
+        "hallway": ["rooftop","vip","maze"],
+        "vip": ["hallway"],
+        "maze": ["garden"]
+    },
+    "vision": {
+        "rooftop": ["garden","hallway"],
+        "hallway": ["vip","rooftop"]
+    },
+    "block": {
+        "aaron": {
+            "hallway": ["maze"]
+        },
+        "charlotte": {
+            "hallway": ["maze"]
+        },
+        "david": {
+            "hallway": ["maze"]
+        }
+    },
+    "positions": {
+        "aaron": {
+            "maze": [1],
+            "vip": [7]
+        },
+        "bobby": {
+            "event": [1]
+        },
+        "charlotte": {
+            "event": [1]
+        },
+        "david": {
+            "event": [1]
+        }
+    }
+}
